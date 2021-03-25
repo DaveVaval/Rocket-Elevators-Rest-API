@@ -6722,23 +6722,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HP\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Grimmjowx9\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\Desktop\\Merge\\Rocket-Elevators-Rest-API\\Rocket-Elevators-Rest-API.csproj",
+      "projectUniqueName": "C:\\Users\\Grimmjowx9\\Desktop\\CODEBOXX\\ODYSSEY\\Week_9_Consolidation\\Rocket-Elevators-Rest-API\\Rocket-Elevators-Rest-API.csproj",
       "projectName": "Rocket-Elevators-Rest-API",
-      "projectPath": "C:\\Users\\HP\\Desktop\\Merge\\Rocket-Elevators-Rest-API\\Rocket-Elevators-Rest-API.csproj",
-      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\Desktop\\Merge\\Rocket-Elevators-Rest-API\\obj\\",
+      "projectPath": "C:\\Users\\Grimmjowx9\\Desktop\\CODEBOXX\\ODYSSEY\\Week_9_Consolidation\\Rocket-Elevators-Rest-API\\Rocket-Elevators-Rest-API.csproj",
+      "packagesPath": "C:\\Users\\Grimmjowx9\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Grimmjowx9\\Desktop\\CODEBOXX\\ODYSSEY\\Week_9_Consolidation\\Rocket-Elevators-Rest-API\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Grimmjowx9\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6823,7 +6819,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -6832,7 +6828,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Version du package détectée en dehors de la contrainte de dépendance : Pomelo.EntityFrameworkCore.MySql 3.2.4 nécessite MySqlConnector (>= 0.69.9 && < 1.0.0) alors que la version MySqlConnector 1.3.1 a été résolue.",
+      "message": "Detected package version outside of dependency constraint: Pomelo.EntityFrameworkCore.MySql 3.2.4 requires MySqlConnector (>= 0.69.9 && < 1.0.0) but version MySqlConnector 1.3.1 was resolved.",
       "libraryId": "MySqlConnector",
       "targetGraphs": [
         "net5.0"
