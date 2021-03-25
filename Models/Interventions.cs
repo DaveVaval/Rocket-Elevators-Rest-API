@@ -3,7 +3,7 @@ using System;
 
 namespace Rocket_Elevators_Rest_API.Models
 {
-    public partial class Interventions
+    public class Interventions
     {
        public long Id { get; set; }
        public int? author { get; set; }
