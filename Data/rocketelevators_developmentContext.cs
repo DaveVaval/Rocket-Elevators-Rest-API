@@ -34,6 +34,7 @@ namespace Rocket_Elevators_Rest_API.Data
         public virtual DbSet<Quotes> Quotes { get; set; }
         public virtual DbSet<SchemaMigrations> SchemaMigrations { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Interventions> interventions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

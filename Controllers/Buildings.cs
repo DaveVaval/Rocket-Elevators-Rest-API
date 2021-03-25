@@ -21,12 +21,13 @@ namespace Rocket_Elevators_Rest_API.Models.Controllers
             _context = context;
         }
 
+        // GET: api/buildings
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Buildings>>> GetBuildings()
         {
             return await _context.Buildings.ToListAsync();
         }
-      // GET: api/buildings
+        
         // Retrieving a list of Buildings requiring intervention 
        [HttpGet("Intervention")]
         public ActionResult<List<Buildings>> GetToFixBuildings()

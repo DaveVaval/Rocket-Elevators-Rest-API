@@ -9,6 +9,6 @@ namespace Rocket_Elevators_Rest_API.Models
 
         }
 
-        public DbSet<Interventions> Interventions { get; set; }
+        public DbSet<Interventions> interventions { get; set; }
     }
 }
