@@ -1,7 +1,10 @@
+![alt text](https://github.com/DaveVaval/Rocket-Elevators-Ruby-Controller/blob/Main/img/R3.png)
 
-"# Rocket-Elevators-Rest-API" 
+# Rocket Elevators Rest API
 
-
+<details>
+<summary><i>CLICK TO EXPAND</i></summary>
+<br>
 
 In this project we Created Rest Apis for Rocket Elevators. and the link for our differents Apis are below and you can test it in Postman
 here is example of how u can access our api
@@ -91,3 +94,63 @@ We use difference Controllers to expose Async API Endpoints for CRUD operations.
             return battery;
         }
 And we can see the results our our request in Postman.
+</details>
+
+## Consolidation
+
+Following the same structure, I built two different requests:
+- GET request to retrieve all on the interventions that have a "Pending" status and no start date.
+- PUT request to change the status of an intervention and either the start date or end date.
+
+GET Request:
+
+    
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Interventions>>> GetInterventions()
+        {
+            var _intervention = await _context.interventions.ToListAsync();
+            var interventionsList = new List<Interventions>(){};
+
+            foreach(Interventions interventions in _intervention)
+            {
+                if(interventions.start_of_intervention == null && interventions.status == "Pending")
+                {
+                    interventionsList.Add(interventions);
+                }
+            }
+            
+            return interventionsList;
+        }
+
+
+PUT Request:
+
+        [HttpPut("{id}/{status}")]
+        public async Task<ActionResult<Interventions>> StartIntervention(long id, string status)
+        {
+            var intervention = await _context.interventions.FindAsync(id);
+            intervention.status = status;
+
+            if(status == "InProgress")
+            {
+                intervention.start_of_intervention = DateTime.Now;
+                await _context.SaveChangesAsync();
+                return intervention;
+            }
+            else if(status == "Completed")
+            {
+                intervention.end_of_intervention = DateTime.Now;
+                await _context.SaveChangesAsync();
+                return intervention;
+            }
+
+            return Ok("Invalid Endpoint!");
+        }
+
+The endpoints can be tested on postman with the deployed api:
+
+- GET: https://daverocketrestapi.azurewebsites.net/api/Interventions
+- PUT: https://daverocketrestapi.azurewebsites.net/api/Interventions/8/InProgress
+- PUT: https://daverocketrestapi.azurewebsites.net/api/Interventions/6/Completed
+
+The intervention id can be changed between 1 and 9. 
