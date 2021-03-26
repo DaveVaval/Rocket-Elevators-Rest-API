@@ -36,7 +36,7 @@ namespace Rocket_Elevators_Rest_API.Models.Controllers
             return interventionsList;
         }
 
-        // PUT Request to change specified intervention status to In Progess
+        // PUT Request to change specified intervention status to In Progess or Completed
         [HttpPut("{id}/{status}")]
         public async Task<ActionResult<Interventions>> StartIntervention(long id, string status)
         {
