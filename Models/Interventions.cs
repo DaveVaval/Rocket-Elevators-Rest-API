@@ -1,6 +1,6 @@
 using System;
 
-
+// Intervention Table model
 namespace Rocket_Elevators_Rest_API.Models
 {
     public class Interventions

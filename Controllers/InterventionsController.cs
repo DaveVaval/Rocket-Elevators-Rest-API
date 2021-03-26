@@ -42,19 +42,19 @@ namespace Rocket_Elevators_Rest_API.Models.Controllers
         [HttpPut("{id}/{status}")]
         public async Task<ActionResult<Interventions>> StartIntervention(long id, string status)
         {
+            var intervention = await _context.interventions.FindAsync(id);
+            intervention.status = status;
 
             if(status == "InProgress")
             {
-                var intervention = await _context.interventions.FindAsync(id);
-                intervention.status = status;
                 intervention.start_of_intervention = DateTime.Now;
+                await _context.SaveChangesAsync();
                 return intervention;
             }
             else if(status == "Completed")
             {
-                var intervention = await _context.interventions.FindAsync(id);
-                intervention.status = status;
                 intervention.end_of_intervention = DateTime.Now;
+                await _context.SaveChangesAsync();
                 return intervention;
             }
 
