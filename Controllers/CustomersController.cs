@@ -23,7 +23,6 @@ namespace Rocket_Elevators_Rest_API.Models.Controllers
         public async Task<ActionResult<Customers>> CheckCustomer(string email)
         {
             var _customers = await _context.Customers.ToListAsync();
-            var customerList = new List<Customers>(){};
 
             foreach(Customers customers in _customers)
             {
