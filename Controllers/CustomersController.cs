@@ -20,7 +20,7 @@ namespace Rocket_Elevators_Rest_API.Models.Controllers
         }
 
         [HttpGet("{email}")]
-        public async Task<ActionResult<IEnumerable<Customers>>> CheckCustomer(string email)
+        public async Task<ActionResult<Customers>> CheckCustomer(string email)
         {
             var _customers = await _context.Customers.ToListAsync();
             var customerList = new List<Customers>(){};
@@ -29,10 +29,10 @@ namespace Rocket_Elevators_Rest_API.Models.Controllers
             {
                 if(customers.CompanyContactEmail == email)
                 {
-                    customerList.Add(customers);
+                    return customers;
                 }
             }
-            return customerList;
+            return Ok("bruh");  
         }
     }
 }
