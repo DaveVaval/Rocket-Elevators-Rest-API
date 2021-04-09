@@ -40,8 +40,23 @@ namespace Rocket_Elevators_Rest_API.Models.Controllers
             select bat;
             return ToFixBuildingsList.Distinct().ToList();
         }
-       
 
-      
+        // Get all the building belonging to a specified customer id
+        [HttpGet("{customerId}")]
+        public async Task<ActionResult<IEnumerable<Buildings>>> GetCustomerBuildins(string customerId)
+        {
+            var _buildings = await _context.Buildings.ToListAsync();
+            var buildingList = new List<Buildings>(){};
+
+            foreach(Buildings buildings in _buildings)
+            {
+                if(buildings.CustomerId.ToString() == customerId)
+                {
+                    buildingList.Add(buildings);
+                }
+            }
+            return buildingList;
+        }
+       
     }
 }

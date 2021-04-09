@@ -18,5 +18,7 @@ namespace Rocket_Elevators_Rest_API.Models
        public string result { get; set; }
        public string report { get; set; }
        public string status { get; set; }
+       public DateTime? created_at { get; set; }
+       public DateTime? updated_at { get; set; }
     }
 }

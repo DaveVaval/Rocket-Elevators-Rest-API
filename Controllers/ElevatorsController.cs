@@ -87,5 +87,22 @@ namespace Rocket_Elevators_Rest_API.Controllers
             return _context.Elevators.Any(e => e.Id == id);
         }
 
+         // Get all the column belonging to a specified battery id
+        [HttpGet("getele/{columnId}")]
+        public async Task<ActionResult<IEnumerable<Elevators>>> GetCustomerBuildins(string columnId)
+        {
+            var _elevators = await _context.Elevators.ToListAsync();
+            var elevatorList = new List<Elevators>(){};
+
+            foreach(Elevators elevator in _elevators)
+            {
+                if(elevator.ColumnId.ToString() == columnId)
+                {
+                    elevatorList.Add(elevator);
+                }
+            }
+            return elevatorList;
+        }
+
     }
 }

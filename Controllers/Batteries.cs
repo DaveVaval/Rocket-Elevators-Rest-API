@@ -120,6 +120,24 @@ namespace Rocket_Elevators_Rest_API.Models.Controllers
         }
 
 
+        // Get all the batteries belonging to a specified building id
+        [HttpGet("getbat/{buildingId}")]
+        public async Task<ActionResult<IEnumerable<Batteries>>> GetCustomerBuildins(string buildingId)
+        {
+            var _batteries = await _context.Batteries.ToListAsync();
+            var batteryList = new List<Batteries>(){};
+
+            foreach(Batteries battery in _batteries)
+            {
+                if(battery.BuildingId.ToString() == buildingId)
+                {
+                    batteryList.Add(battery);
+                }
+            }
+            return batteryList;
+        }
+
+
     }
 
 

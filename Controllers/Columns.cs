@@ -121,5 +121,22 @@ namespace Rocket_Elevators_Rest_API.Models.Controllers
         {
             return _context.Columns.Any(e => e.Id == id);
         }
+
+        // Get all the column belonging to a specified battery id
+        [HttpGet("getcol/{batteryId}")]
+        public async Task<ActionResult<IEnumerable<Columns>>> GetCustomerBuildins(string batteryId)
+        {
+            var _columns = await _context.Columns.ToListAsync();
+            var columnList = new List<Columns>(){};
+
+            foreach(Columns column in _columns)
+            {
+                if(column.BatteryId.ToString() == batteryId)
+                {
+                    columnList.Add(column);
+                }
+            }
+            return columnList;
+        }
     }
 }

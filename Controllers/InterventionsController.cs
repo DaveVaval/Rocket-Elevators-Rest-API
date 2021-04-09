@@ -4,10 +4,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Rocket_Elevators_Rest_API.Data;
+using System.Linq;
+using System.IO;
+
 
 namespace Rocket_Elevators_Rest_API.Models.Controllers
 {
-    [Route("api/Interventions")]
+    [Route("api/[controller]")]
     [ApiController]
     public class InterventionsController : ControllerBase
     {
@@ -57,6 +60,18 @@ namespace Rocket_Elevators_Rest_API.Models.Controllers
             }
 
             return Ok("Invalid Endpoint!");
+        }
+        
+        // This method will create an intervention
+        [HttpPost("create")]
+        public async Task<ActionResult<Interventions>> PostIntervention(Interventions intervention)
+        {
+            intervention.created_at = DateTime.Now;
+            intervention.updated_at = DateTime.Now;
+            _context.interventions.Add(intervention);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetInterventions", new { id = intervention.Id }, intervention);
         }
 
     }

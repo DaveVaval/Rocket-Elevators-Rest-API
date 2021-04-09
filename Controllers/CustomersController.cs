@@ -18,9 +18,9 @@ namespace Rocket_Elevators_Rest_API.Models.Controllers
         {
             _context = context;
         }
-
-        [HttpGet("{email}")]
-        public async Task<ActionResult<Customers>> CheckCustomer(string email)
+        // Get Request that will return the customer email or customer id with the specified endpoint and argument
+        [HttpGet("{email}/{spec}")]
+        public async Task<ActionResult<string>> CheckCustomer(string email, string spec)
         {
             var _customers = await _context.Customers.ToListAsync();
 
@@ -28,10 +28,18 @@ namespace Rocket_Elevators_Rest_API.Models.Controllers
             {
                 if(customers.CompanyContactEmail == email)
                 {
-                    return customers;
+                    if(spec == "user")
+                    {
+                        return customers.CompanyContactEmail;
+                    }
+                    else if(spec == "id")
+                    {
+                        return customers.Id.ToString();
+                    }
                 }
             }
             return Ok("bruh");  
         }
+
     }
 }
