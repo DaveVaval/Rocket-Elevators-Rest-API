@@ -235,8 +235,3 @@ C:\Users\Grimmjowx9\Desktop\CODEBOXX\ODYSSEY\Week_9_Consolidation\Rocket-Elevato
 C:\Users\Grimmjowx9\Desktop\CODEBOXX\ODYSSEY\Week_9_Consolidation\Rocket-Elevators-Rest-API\obj\Debug\net5.0\Rocket-Elevators-Rest-API.RazorTargetAssemblyInfo.cache
 C:\Users\Grimmjowx9\Desktop\CODEBOXX\ODYSSEY\Week_9_Consolidation\Rocket-Elevators-Rest-API\obj\Debug\net5.0\Rocket-Elevators-Rest-API.csproj.CopyComplete
 C:\Users\Grimmjowx9\Desktop\CODEBOXX\ODYSSEY\Week_9_Consolidation\Rocket-Elevators-Rest-API\obj\Debug\net5.0\Rocket-Elevators-Rest-API.genruntimeconfig.cache
-C:\Users\Grimmjowx9\Desktop\CODEBOXX\ODYSSEY\Week_9_Consolidation\Rocket-Elevators-Rest-API\bin\Debug\net5.0\publish\web.config
-C:\Users\Grimmjowx9\Desktop\CODEBOXX\ODYSSEY\Week_9_Consolidation\Rocket-Elevators-Rest-API\bin\Debug\net5.0\publish\appsettings.Development.json
-C:\Users\Grimmjowx9\Desktop\CODEBOXX\ODYSSEY\Week_9_Consolidation\Rocket-Elevators-Rest-API\bin\Debug\net5.0\publish\appsettings.json
-C:\Users\Grimmjowx9\Desktop\CODEBOXX\ODYSSEY\Week_9_Consolidation\Rocket-Elevators-Rest-API\bin\Debug\net5.0\publish\Rocket-Elevators-Rest-API.deps.json
-C:\Users\Grimmjowx9\Desktop\CODEBOXX\ODYSSEY\Week_9_Consolidation\Rocket-Elevators-Rest-API\bin\Debug\net5.0\publish\Rocket-Elevators-Rest-API.runtimeconfig.json
