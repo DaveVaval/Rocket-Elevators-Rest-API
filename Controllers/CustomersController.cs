@@ -57,7 +57,8 @@ namespace Rocket_Elevators_Rest_API.Models.Controllers
             
             return Ok("Invalid email!");
         }
-
+        
+        // This will update the customer info
         [HttpPut("update")]
         public async Task<dynamic> Update([FromBody] Customers body)
         {
