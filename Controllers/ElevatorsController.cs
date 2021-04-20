@@ -22,6 +22,35 @@ namespace Rocket_Elevators_Rest_API.Controllers
             _context = context;
         }
 
+        // GET the number of elevators, buildings, customers
+        [HttpGet]
+        public async Task<dynamic> GetAllElevators(){
+
+            var elevators = await _context.Elevators.ToListAsync();
+            var buildings = await _context.Buildings.ToListAsync();
+            var customers = await _context.Customers.ToListAsync();
+            var i = 0;
+            var j = 0;
+            var p = 0;
+            var numbers = new List<Int64>(){};
+            foreach(Elevators elevator in elevators)
+            {
+                i++;
+            }
+            numbers.Add(i);
+            foreach(Buildings building in buildings)
+            {
+                j++;
+            }
+            numbers.Add(j);
+            foreach(Customers customer in customers)
+            {
+                p++;
+            }
+            numbers.Add(p);
+            return numbers;
+        }
+
 
         // GET api/elevators
         [HttpGet("status/{status}")]

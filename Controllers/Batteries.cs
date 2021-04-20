@@ -31,8 +31,31 @@ namespace Rocket_Elevators_Rest_API.Models.Controllers
             return await _context.Batteries.ToListAsync();
         }
 
+        // GET number of battery and building
+        [HttpGet("numbers")]
+        public async Task<dynamic> GetAllBatteries()
+        {
+            var buildings = await _context.Buildings.ToListAsync();
+            var batteries = await _context.Batteries.ToListAsync();
+            var i = 0;
+            var j = 0;
+            var numbers = new List<Int64>(){};
+
+            foreach(Batteries battery in batteries)
+            {
+                i++;
+            }
+            numbers.Add(i);
+            foreach(Buildings building in buildings)
+            {
+                j++;
+            }
+            numbers.Add(j);
+            return numbers;
+        }
+
         // GET: api/Batteries/{id}
-      [HttpGet("{id}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Batteries>> GetBattery(long id)
         {
             var battery = await _context.Batteries.FindAsync(id);

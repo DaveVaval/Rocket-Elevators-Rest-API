@@ -27,6 +27,16 @@ namespace Rocket_Elevators_Rest_API.Models.Controllers
         {
             return await _context.Buildings.ToListAsync();
         }
+
+        // GET number of Buildings
+        [HttpGet("number")]
+        public async Task<dynamic> GetBuildingNumber()
+        {
+            var buildings = await _context.Buildings.ToListAsync();
+            var i = 0;
+            foreach(Buildings building in buildings){i++;}
+            return i;
+        }
         
         // Retrieving a list of Buildings requiring intervention 
        [HttpGet("Intervention")]

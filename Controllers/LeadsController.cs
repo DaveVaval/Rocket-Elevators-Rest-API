@@ -1,9 +1,11 @@
 using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Rocket_Elevators_Rest_API.Data;
 using Rocket_Elevators_Rest_API.Models;
 using System.Collections.Generic;
-using Rocket_Elevators_Rest_API.Data;
 
 namespace Rocket_Elevators_Rest_API.Models.Controllers
 {
@@ -22,13 +24,10 @@ namespace Rocket_Elevators_Rest_API.Models.Controllers
         // Get list of leads                                    
         // GET: api/leads           
         [HttpGet]
-        public IEnumerable<Leads> GetLeads()
+        public async Task<dynamic> GetLeads()
         {
-          //Prepare the query 
-            IQueryable<Leads> Leads =
-            from l in _context.Leads
-            select l;
-            return Leads.ToList();
+          
+          return await _context.Leads.ToListAsync();
 
         }
         //Retrieving a list of Leads created in the last 30 days who have not yet become customers.
