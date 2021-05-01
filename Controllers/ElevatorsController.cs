@@ -133,5 +133,18 @@ namespace Rocket_Elevators_Rest_API.Controllers
             return elevatorList;
         }
 
+        [HttpGet("update/{status}/{id}")]
+        public async Task<dynamic> test(string status, long id)
+        {
+            //find corresponding elevator 
+            var elevator = await _context.Elevators.FindAsync(id);
+            // //change status 
+            elevator.Status = status;
+            await _context.SaveChangesAsync();         
+
+            //return succeed message 
+            return elevator;
+        }
+
     }
 }
